@@ -482,6 +482,7 @@ func splitCondition(conditions []Comparable) ([]Comparable, []Comparable) {
 	return conditions, nil
 }
 
+
 func buildSelect(table string, ufields []string, groupBy, orderBy, lockMode string, limit *eleLimit, conditions ...Comparable) (string, []interface{}, error) {
 	fields := "*"
 	if len(ufields) > 0 {
