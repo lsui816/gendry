@@ -517,7 +517,7 @@ func buildSelect(table string, ufields []string, groupBy, orderBy, lockMode stri
 	}
 	if nil != limit {
 		bd.WriteString(" LIMIT ? OFFSET ?")
-		vals = append(vals, int(limit.begin), int(limit.step))
+		vals = append(vals, int(limit.step),int(limit.begin))
 	}
 	if "" != lockMode {
 		bd.WriteString(allowedLockMode[lockMode])
